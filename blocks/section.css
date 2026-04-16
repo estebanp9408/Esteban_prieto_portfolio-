@@ -1,0 +1,15 @@
+.section {
+    display: none;
+    position: relative;
+    width: 100%;
+    flex: 1;
+}
+
+.active {
+    display: block;
+}
+.back-button{
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+}

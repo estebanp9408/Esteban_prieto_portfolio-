@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Esteban Prieto melo" />
     <meta name="description" content="portfolio Esteban Prieto" />
     <meta name="keywords" content="tripleten, portfolio, proyectos, estudiante " />
@@ -22,20 +21,23 @@
 
       </header>
       <main class="main">
-          <section class="introduction">
-              <div class="main-photo_container">
+          <section id="introduction" class="section introduction active">
+            <div class="main-photo_container">
                   <img class="main-photo" src="./Images/esteban-prieto_ph.jpg" alt="Main Photo">
-              </div>
+
               <div class="main-nav">
-              <button class="main-nav-link">About Me</button>
-              <button class="main-nav-link">Projects</button>
-              <button class="main-nav-link">Contact</button>
+                <a class="main-nav-link" href="#about-me">About Me</a>
+                <a class="main-nav-link" href="#projects">Projects</a>
+                <a class="main-nav-link" href="#contact">Contact</a>
               </div>
+            </div>
           </section>
 
-          <section class="about-me"></section>
-          <section class="projects"></section>
-          <section class="contact">
+          <section id="about-me" class="section about-me "></section>
+          <section id="projects" class="section projects">
+            <h1>proyectos de esteban prieto </h1>
+          </section>
+          <section id="contact" class="section contact">
                 <div class="header-right">
                 <a class="header-email" href="mailto:estebanprietomelo@gmail.com"><img class="header-icon" src="./Images/6ak2vv6kr512hip8ndktntij5p.png" alt="Email Icon">: estebanprietomelo@gmail.com</a>
           </div>
@@ -47,6 +49,22 @@
               <a href=" https://www.linkedin.com/in/estebanprietomelo/"><img class="footer-icon" src="./Images/LinkedIn-Icon-Black-Logo.wine.svg" alt="LinkedIn-Icon-Black-Logo"></a>
               <a href=" https://github.com/estebanp9408 "><img class="footer-icon" src="./Images/GitHub-Logo.wine.svg" alt="GitHub-Icon-Black-Logo"></a>
           </div>
+        <template id="elements-template">
+          <div class="elements__card">
+            <button class="elements__card-delete"></button>
+            <img class="elements__card-photo" src="" alt="" />
+            <div class="elements__card-content">
+              <p class="elements__card-content-text"></p>
+              <button class="elements__card-like"></button>
+            </div>
+          </div>
+        </template>
+
+
+
+    <template id="back-to-top-template">
+      <a href="#introduction" class=" back-button main-nav-link">← Volver</a>
+    </template>
       </footer>
   </div>
   <script type="module" src="./scripts/index.js"></script>
