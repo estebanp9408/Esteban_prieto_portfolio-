@@ -32,16 +32,79 @@
               </div>
             </div>
           </section>
-
-          <section id="about-me" class="section about-me "></section>
+          <section id="about-me" class="section about-me ">
+            <div class="about-me__container">
+              <!-- Aquí se cargarán los datos de "About Me" dinámicamente -->
+            </div>
+          </section>
           <section id="projects" class="section projects">
-            <h1>proyectos de esteban prieto </h1>
+            <div class="projects__container">
+              <!-- Aquí se cargarán los proyectos dinámicamente -->
+            </div>
           </section>
           <section id="contact" class="section contact">
-                <div class="header-right">
-                <a class="header-email" href="mailto:estebanprietomelo@gmail.com"><img class="header-icon" src="./Images/6ak2vv6kr512hip8ndktntij5p.png" alt="Email Icon">: estebanprietomelo@gmail.com</a>
+            <div class="contact__container">
+              <!-- Aquí se cargarán los datos de contacto dinámicamente -->
           </div>
           </section>
+          <section class="section big-img_popup popup" >
+              <div class="big-img_popup-content">
+                  <button class="big-img_popup-close">X</button>
+                  <img class="big-img_popup-image" src="" alt="Big Image">
+                  <div class="big-img_popup-caption"></div>
+                  <div class="big-img_popup-impact"></div>
+                  <div class="big-img_popup-tecnologies"></div>
+                  <div class="big-img_popup-navigation">
+                      <button class="big-img_popup-prev"></button>
+                      <button class="big-img_popup-next"></button>
+                  </div>
+              </div>
+          </section>
+          <template class="contact-card-template">
+           <a class="contact-card-link"href="">
+
+            <div class="contact-card">
+              <img class="contact-card-icon" src="" alt="" />
+              <div><p class="contact-card-label"></p></div>
+              <div><p class="contact-card-value"></p></div>
+            </div>
+           </a>
+
+          </template>
+          <template class="about-me__template">
+  <div class="about-me">
+    <h2 class="about-me__title"></h2>
+    <p class="about-me__description"></p>
+    <ul class="about-me__skills"></ul>
+    <ul class="about-me__languages"></ul>
+  </div>
+          </template>
+<template class="about-me__skill-template">
+  <li class="about-me__skill"></li>
+</template>
+
+<template class="about-me__language-template">
+  <li class="about-me__language">
+    <span class="about-me__language-name"></span>
+    <span class="about-me__language-level"></span>
+  </li>
+</template>
+          <template id="elements-template">
+            <div class="elements__card">
+              <button class="elements__card-delete"></button>
+              <img class="elements__card-photo" src="" alt="" />
+              <div class="elements__card-content">
+                <p class="elements__card-content-text"></p>
+                <button class="elements__card-like"></button>
+              </div>
+            </div>
+          </template>
+          <template id="back-to-top-template">
+            <a href="#introduction" class=" back-button main-nav-link">← Volver</a>
+          </template>
+          <template>
+
+          </template>
       </main>
       <footer class="footer">
           <p>&copy; Esteban Prieto 2026</p>
@@ -49,22 +112,6 @@
               <a href=" https://www.linkedin.com/in/estebanprietomelo/"><img class="footer-icon" src="./Images/LinkedIn-Icon-Black-Logo.wine.svg" alt="LinkedIn-Icon-Black-Logo"></a>
               <a href=" https://github.com/estebanp9408 "><img class="footer-icon" src="./Images/GitHub-Logo.wine.svg" alt="GitHub-Icon-Black-Logo"></a>
           </div>
-        <template id="elements-template">
-          <div class="elements__card">
-            <button class="elements__card-delete"></button>
-            <img class="elements__card-photo" src="" alt="" />
-            <div class="elements__card-content">
-              <p class="elements__card-content-text"></p>
-              <button class="elements__card-like"></button>
-            </div>
-          </div>
-        </template>
-
-
-
-    <template id="back-to-top-template">
-      <a href="#introduction" class=" back-button main-nav-link">← Volver</a>
-    </template>
       </footer>
   </div>
   <script type="module" src="./scripts/index.js"></script>

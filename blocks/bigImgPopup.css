@@ -1,0 +1,61 @@
+.section.big-img_popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.section.big-img_popup.active {
+  display: flex;
+}
+
+.section.big-img_popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.section.big-img_popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.section.big-img_popup-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.section.big-img_popup-caption,
+.section.big-img_popup-impact,
+.section.big-img_popup-tecnologies {
+  color: white;
+  margin-top: 10px;
+}
+
+.section.big-img_popup-navigation {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section.big-img_popup-prev,
+.section.big-img_popup-next {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
