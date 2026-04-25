@@ -1,12 +1,23 @@
 import Card from "../components/Card.js";
-import projects from "../components/InitialArray.js";
+import projects from "../data/InitialArray.js";
 import Popup from "../components/Popup.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/section.js";
-import contactData from "../components/ContactArray.js";
-import aboutData from "../components/ProfileData.js";
+import contactData from "../data/ContactArray.js";
+import aboutData from "../data/ProfileData.js";
 import AboutME from "../components/AboutMe.js";
 import ContactCard from "../components/ContactCard.js";
+function renderer(item) {
+  const card = new Card(
+    item,
+    "#elements-template",
+    handlerImageClick,
+    handleDeleteClick,
+    handleLikeClick,
+    currentUserId
+  );
+  return card.generateCard();
+}
 
 const container = document.querySelector('.main-photo_container');
 const mainNav = document.querySelector('.main-nav');
@@ -19,14 +30,13 @@ container.addEventListener('mouseleave', () => {
   mainNav.classList.remove('main-nav_hover');
 });
 const mainNavLinks = document.querySelectorAll('.main-nav-link');
-const sections=document.querySelectorAll('.section');
+const section = document.querySelector('.section');
 mainNavLinks.forEach(link => {
+
     link.addEventListener('click', (e) => {
       e.preventDefault();
-
-      sections.forEach(sec => sec.classList.remove('active'));
-      const targetSection = document.querySelector(e.currentTarget.getAttribute('href'));
-      targetSection.classList.add('active');
+      const sectionType= e.currentTarget.dataset.section;
+      sectionType.classList.add('');
     });
 });
 const backTemplate = document.querySelector('#back-to-top-template');
