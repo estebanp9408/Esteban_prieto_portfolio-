@@ -10,21 +10,21 @@ const contactData = [
     type: "email",
     label: "Correo",
     value: "estebanprietomelo@gmail.com",
-    icon: "icons/email.svg",
+    icon: "/images/icons/email.png",
     link: "mailto:estebanprietomelo@gmail.com"
   },
   {
     type: "linkedin",
     label: "LinkedIn",
     value: "estebanprietomelo",
-    icon: "icons/linkedin.svg",
+    icon: "/images/icons/linkedin.svg",
     link: "https://www.linkedin.com/in/estebanprietomelo/"
   },
   {
     type: "github",
     label: "GitHub",
     value: "estebanp9408",
-    icon: "icons/github.svg",
+    icon: "/images/icons/github.svg",
     link: "https://github.com/estebanp9408"
   }
 ];

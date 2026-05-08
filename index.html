@@ -14,9 +14,9 @@
 <body>
   <div class="page">
       <header class="header">
-          <div class="header-left">
+          <div class="header-container">
               <h1 class="header-title">Esteban Prieto</h1>
-              <p class="header-subtitle">- Web Developer</p>
+              <p class="header-subtitle">- Web Developer -</p>
           </div>
 
       </header>
@@ -26,13 +26,13 @@
                   <img class="main-photo" src="./Images/esteban-prieto_ph.jpg" alt="Main Photo">
 
               <div class="main-nav">
-                <a class="main-nav-link" href="#about-me">About Me</a>
-                <a class="main-nav-link" href="#projects">Projects</a>
-                <a class="main-nav-link" href="#contact">Contact</a>
+                <a class="main-nav-link" href="#about-me" data-section="about-me">About Me</a>
+                <a class="main-nav-link" href="#projects" data-section="projects">Projects</a>
+                <a class="main-nav-link" href="#contact" data-section="contact">Contact</a>
               </div>
             </div>
           </section>
-          <section  class="section">
+          <section  class="dynamic-section">
            <div class ="section__container">
            </div>
           </section>
@@ -78,29 +78,24 @@
     <span class="about-me__language-level"></span>
   </li>
 </template>
-          <template id="elements-template">
-            <div class="elements__card">
-              <button class="elements__card-delete"></button>
-              <img class="elements__card-photo" src="" alt="" />
-              <div class="elements__card-content">
-                <p class="elements__card-content-text"></p>
-                <button class="elements__card-like"></button>
+          <template id="projects-card-template">
+            <div class="projects-card__card">
+              <img class="projects-card__card-photo" src="" alt="" />
+              <div class="projects-card__card-content">
+                <p class="projects-card__card-title"></p>
+                <p class="projects-card__card-subtitle"></p>
               </div>
             </div>
           </template>
           <template id="back-to-top-template">
             <a href="#introduction" class=" back-button main-nav-link">← Volver</a>
           </template>
-          <template>
-
+          <template id ="section-title-template">
+            <h2 class="section-title"></h2>
           </template>
       </main>
       <footer class="footer">
           <p>&copy; Esteban Prieto 2026</p>
-            <div class="footer-links">
-              <a href=" https://www.linkedin.com/in/estebanprietomelo/"><img class="footer-icon" src="./Images/LinkedIn-Icon-Black-Logo.wine.svg" alt="LinkedIn-Icon-Black-Logo"></a>
-              <a href=" https://github.com/estebanp9408 "><img class="footer-icon" src="./Images/GitHub-Logo.wine.svg" alt="GitHub-Icon-Black-Logo"></a>
-          </div>
       </footer>
   </div>
   <script type="module" src="./scripts/index.js"></script>

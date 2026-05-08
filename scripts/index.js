@@ -1,27 +1,13 @@
-import Card from "../components/Card.js";
-import projects from "../data/InitialArray.js";
-import Popup from "../components/Popup.js";
+import sectionsConfig  from "../config/sectionsConfig.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/section.js";
-import contactData from "../data/ContactArray.js";
-import aboutData from "../data/ProfileData.js";
-import AboutME from "../components/AboutMe.js";
-import ContactCard from "../components/ContactCard.js";
-function renderer(item) {
-  const card = new Card(
-    item,
-    "#elements-template",
-    handlerImageClick,
-    handleDeleteClick,
-    handleLikeClick,
-    currentUserId
-  );
-  return card.generateCard();
-}
 
 const container = document.querySelector('.main-photo_container');
 const mainNav = document.querySelector('.main-nav');
-
+const backTemplate = document.querySelector('#back-to-top-template');
+function handlerImageClick(name, link) {
+  popupImage.open(name, link);
+}
 container.addEventListener('mouseenter', () => {
   mainNav.classList.add('main-nav_hover');
 });
@@ -30,23 +16,56 @@ container.addEventListener('mouseleave', () => {
   mainNav.classList.remove('main-nav_hover');
 });
 const mainNavLinks = document.querySelectorAll('.main-nav-link');
+const sectionWrapper = document.querySelector('.dynamic-section');
+const sectionContainer = document.querySelector('.section__container');
 const section = document.querySelector('.section');
-mainNavLinks.forEach(link => {
+const sectionTitleTemplate = document.querySelector('#section-title-template');
+const sectionInstance = new Section({
+  renderer: (item) => item
+}, sectionContainer);
 
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const sectionType= e.currentTarget.dataset.section;
-      sectionType.classList.add('');
-    });
-});
-const backTemplate = document.querySelector('#back-to-top-template');
-sections.forEach(sec => {
-    if (sec.id === 'introduction') return;
-    const backButton = backTemplate.content.querySelector('a').cloneNode(true);
-    sec.appendChild(backButton);
-    backButton.addEventListener('click', (e) => {
+mainNavLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    section.classList.remove('active');
+    const sectionType = e.currentTarget.dataset.section;
+    const titleElement = sectionTitleTemplate.content.firstElementChild.cloneNode(true);
+    titleElement.textContent = sectionsConfig[sectionType].title;
+    sectionWrapper.prepend(titleElement);
+    const config = sectionsConfig[sectionType];
+    sectionWrapper.className = 'dynamic-section';
+    sectionWrapper.classList.add(`section-${sectionType}`);
+    const renderer = (item) => {
+      const card = new config.CardClass
+      (item,
+        config.templateSelector,
+       config.handlerImageClick,
+      )
+
+      return card.generateCard();
+    }
+    sectionInstance.setRenderer(renderer);
+    sectionInstance.clear();
+    sectionInstance.renderItems(config.data);
+
+    // Manejo del botón de volver (único)
+    const existingBackButton = sectionWrapper.querySelector('.back-button');
+    if (existingBackButton) {
+      existingBackButton.remove();
+    }
+
+    if (sectionType !== 'introduction') {
+      const backButton = backTemplate.content.firstElementChild.cloneNode(true);
+      backButton.classList.add('back-button');
+
+      backButton.addEventListener('click', (e) => {
         e.preventDefault();
-        sections.forEach(s => s.classList.remove('active'));
-        document.querySelector('#introduction').classList.add('active');
-    })
+        section.classList.add('active');
+        sectionWrapper.className = 'dynamic-section';
+        sectionWrapper.classList.remove(`section-${sectionType}`);
+      });
+
+      sectionWrapper.append(backButton);
+    }
+  });
 });

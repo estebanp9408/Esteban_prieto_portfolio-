@@ -1,24 +1,36 @@
-import { aboutData } from '../data/aboutData.js';
-import { projectsData } from '../data/projectsData.js';
+import  aboutData  from '../data/ProfileData.js';
+import  projects  from '../data/InitialArray.js';
+import  contactData  from '../data/ContactArray.js';
 
-import { AboutCard } from '../components/AboutCard.js';
-import { ProjectCard } from '../components/ProjectCard.js';
-import { ContactCard } from '../components/ContactCard.js';
+import  AboutMe  from '../components/AboutMe.js';
+import Card from '../components/Card.js';
+import  ContactCard  from '../components/ContactCard.js';
 
 export const sectionsConfig = {
   about: {
+    title: 'Sobre mí',
     className: 'section-about',
     data: aboutData,
-    CardClass: AboutCard
+    CardClass: AboutMe
   },
   projects: {
+    title: 'Proyectos',
     className: 'section-projects',
-    data: projectsData,
-    CardClass: ProjectCard
+    data: projects,
+    CardClass: Card,
+    templateSelector: '#projects-card-template',
+      handlerImageClick: (name, link) => {
+
+      popupImage.open({ name, link });
+
+    }
+
   },
   contact: {
+    title: 'Contacto',
     className: 'section-contact',
     data: contactData,
     CardClass: ContactCard
   }
 };
+export default sectionsConfig;

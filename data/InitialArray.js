@@ -1,7 +1,8 @@
 const projects = [
   {
-    title: "Alrededor de los EE.UU. (Integración con API)",
-    subtitle: "Bootcamp Desarrollo Web (2026)",
+    title: "Alrededor de los EE.UU.\n(Integración con API)",
+    subtitle: "Bootcamp Desarrollo Web\n(2026)",
+    link: "./Images/aroundUsOV.png",
     description: [
       "Integración con una API para sincronizar datos del usuario y tarjetas, logrando persistencia de datos y contenido dinámico en tiempo real usando fetch API.",
       "Refactorización del código en clases y módulos, logrando una estructura más escalable y mantenible con JavaScript (ES6)."
@@ -12,20 +13,22 @@ const projects = [
     repo: "https://github.com/estebanp9408/web_project_around"
   },
   {
-    title: "Alrededor de los EE.UU. (Frontend Interactivo)",
-    subtitle: "Bootcamp Desarrollo Web (2025)",
+    title: "Alrededor de los EE.UU.\n(Frontend Interactivo)",
+    subtitle: "Bootcamp Desarrollo Web\n(2025)",
+    link: "./Images/ArounUsPOO_OV.png",
     description: [
       "Implementación de funcionalidades dinámicas como agregar, eliminar y dar 'me gusta' a tarjetas usando manipulación del DOM.",
       "Validación de formularios y mejora de ventanas emergentes para una experiencia de usuario más fluida usando JavaScript, HTML y CSS."
     ],
     impact: "Se logró transformar un sitio estático en una aplicación interactiva con lógica de usuario y manejo de estados.",
     technologies: ["JavaScript", "DOM", "HTML5", "CSS3", "Git"],
-    live: "",
-    repo: "https://github.com/estebanp9408/web_project_around"
+    live: "https://estebanp9408.github.io/web_project_around_POO/",
+    repo: "https://github.com/estebanp9408/web_project_around_POO.git"
   },
   {
-    title: "De patria a patria (Landing Page Responsiva)",
-    subtitle: "Bootcamp Desarrollo Web (2025)",
+    title: "De patria a patria\n(Landing Page Responsiva)",
+    subtitle: "Bootcamp Desarrollo Web\n(2025)",
+    link:"Images/DePatriaAPatriaOV.png",
     description: [
       "Maquetación de una página basada en un diseño de Figma logrando una interfaz fiel al diseño original usando HTML y CSS.",
       "Implementación de diseño responsivo para múltiples dispositivos usando media queries y metodología BEM."

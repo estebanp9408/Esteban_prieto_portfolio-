@@ -4,12 +4,27 @@
     width: 100%;
     flex: 1;
 }
-
+.dynamic-section {
+  position: relative;
+  margin: auto;
+  max-width: 880px;
+  width: 100%;
+}
 .active {
     display: block;
 }
 .back-button{
     position: absolute;
-    bottom: 24px;
-    left: 24px;
+    bottom: -155px;
+    left: 14px;
+}
+.section-title {
+  position: absolute;
+  top: -130px;
+  left: 380px;
+    margin-top: 0px;
+    margin-bottom: 24px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff;
 }
