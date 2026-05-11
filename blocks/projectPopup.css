@@ -1,0 +1,123 @@
+.project-popup {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.82);
+  z-index: 1000;
+}
+
+.project-popup_opened {
+  display: flex;
+}
+
+.project-popup-close {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: transparent;
+  background-image: url(../Images/CloseIcon.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.project-popup-content {
+  position: relative;
+  width: 880px;
+  height: 929px;
+  overflow-y: auto;
+  background-color: #111;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 72px 24px 24px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+}
+
+.project-popup-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.project-popup-caption {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  list-style: none;
+}
+.project-popup-title {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+.project-popup-subtitle {
+  font-size: 14px;
+  color:#fff;
+  text-align: center;
+}
+.project-popup-impact {
+  margin-top: 16px;
+  font-size: 15px;
+  color: #ccc;
+  line-height: 1.5;
+}
+.project-popup-tecnologies {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.5;
+}
+.project-popup-navigation {
+  margin-top: 12px;
+  display: flex;
+  gap: 16px;
+}
+.project-popup__sectiontitle {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+.project-popup-description,
+.project-popup-impact-text,
+.project-popup-technologies-list {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.project-popup-page,
+.project-popup-repository {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+.project-popup__image-container {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    width: 100%;
+  height: auto;
+  border-radius: 12px;
+}

@@ -19,12 +19,9 @@ export const sectionsConfig = {
     data: projects,
     CardClass: Card,
     templateSelector: '#projects-card-template',
-      handlerImageClick: (name, link) => {
-
-      popupImage.open({ name, link });
-
+    handlerImageClick: (data) => {
+      popupImage.open(data);
     }
-
   },
   contact: {
     title: 'Contacto',

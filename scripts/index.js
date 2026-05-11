@@ -1,12 +1,25 @@
 import sectionsConfig  from "../config/sectionsConfig.js";
-import PopupWithImage from "../components/PopupWithImage.js";
+import ProjectPopup from "../components/ProjectPopup.js";
 import Section from "../components/section.js";
 
+const projectPopup = new ProjectPopup({
+  popupSelector: ".project-popup",
+  imageSelector: ".project-popup-image",
+  titleSelector: ".project-popup-title",
+  subtitleSelector: ".project-popup-subtitle",
+  descriptionSelector: ".project-popup-description",
+  impactSelector: ".project-popup-impact-text",
+  technologiesSelector: ".project-popup-technologies-list",
+  liveSelector: ".project-popup-page",
+  repoSelector: ".project-popup-repository",
+});
+
+projectPopup.setEventListeners();
 const container = document.querySelector('.main-photo_container');
 const mainNav = document.querySelector('.main-nav');
 const backTemplate = document.querySelector('#back-to-top-template');
-function handlerImageClick(name, link) {
-  popupImage.open(name, link);
+function handlerImageClick(data) {
+  projectPopup.open(data);
 }
 container.addEventListener('mouseenter', () => {
   mainNav.classList.add('main-nav_hover');
@@ -30,25 +43,24 @@ mainNavLinks.forEach(link => {
     section.classList.remove('active');
     const sectionType = e.currentTarget.dataset.section;
     const titleElement = sectionTitleTemplate.content.firstElementChild.cloneNode(true);
+    titleElement.classList.add('section-title');
     titleElement.textContent = sectionsConfig[sectionType].title;
     sectionWrapper.prepend(titleElement);
     const config = sectionsConfig[sectionType];
     sectionWrapper.className = 'dynamic-section';
     sectionWrapper.classList.add(`section-${sectionType}`);
     const renderer = (item) => {
-      const card = new config.CardClass
-      (item,
+      const card = new config.CardClass(
+        item,
         config.templateSelector,
-       config.handlerImageClick,
-      )
-
+        handlerImageClick,
+      );
       return card.generateCard();
     }
     sectionInstance.setRenderer(renderer);
     sectionInstance.clear();
     sectionInstance.renderItems(config.data);
 
-    // Manejo del botón de volver (único)
     const existingBackButton = sectionWrapper.querySelector('.back-button');
     if (existingBackButton) {
       existingBackButton.remove();
@@ -57,14 +69,17 @@ mainNavLinks.forEach(link => {
     if (sectionType !== 'introduction') {
       const backButton = backTemplate.content.firstElementChild.cloneNode(true);
       backButton.classList.add('back-button');
-
       backButton.addEventListener('click', (e) => {
         e.preventDefault();
         section.classList.add('active');
         sectionWrapper.className = 'dynamic-section';
-        sectionWrapper.classList.remove(`section-${sectionType}`);
+        sectionInstance.clear();
+        const dynamicTitle = sectionWrapper.querySelector('.section-title');
+        if (dynamicTitle) {
+          dynamicTitle.remove();
+        }
+        backButton.remove();
       });
-
       sectionWrapper.append(backButton);
     }
   });

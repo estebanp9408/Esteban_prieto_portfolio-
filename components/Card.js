@@ -1,5 +1,6 @@
 export default class Card {
   constructor(data, templateSelector, handlerImageClick = null) {
+    this._data = data;
     this._title = data.title;
     this._subtitle = data.subtitle;
     this._link = data.link;
@@ -15,9 +16,8 @@ export default class Card {
   }
 _setEventListeners() {
   if (!this._handleCardClick) return;
-
   this._image.addEventListener("click", () => {
-    this._handleCardClick(this._title, this._link);
+    this._handleCardClick(this._data);
   });
 }
   generateCard() {
