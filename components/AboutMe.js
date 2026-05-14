@@ -8,12 +8,25 @@ export default class AboutMe {
     this._template = document.querySelector(templateSelector);
   }
   getTemplate() {
-    const templateContent = (this._template).content.firstElementChild.cloneNode(true);
-    console.log(templateContent);
-    const titleElement = templateContent.querySelector('.about-me__title');
-    const descriptionElement = templateContent.querySelector('.about-me__description');
-    titleElement.textContent = this._title;
-    descriptionElement.textContent = this._description;
+    const templateContent = this._template.content.firstElementChild.cloneNode(true);
+
+    templateContent.querySelector('.about-me__title').textContent = this._title;
+    templateContent.querySelector('.about-me__description').textContent = this._description;
+
+    const skillsList = templateContent.querySelector('.about-me__skills-list');
+    this._skills.forEach(skill => {
+      const li = document.createElement('li');
+      li.textContent = skill;
+      skillsList.append(li);
+    });
+
+    const languagesList = templateContent.querySelector('.about-me__languages-list');
+    this._languages.forEach(({ name, level }) => {
+      const li = document.createElement('li');
+      li.textContent = `${name} — ${level}`;
+      languagesList.append(li);
+    });
+
     return templateContent;
   }
   generateCard() {

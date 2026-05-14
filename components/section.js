@@ -5,26 +5,26 @@ export default class Section {
   }
 
   _renderItem(item) {
-  const node = this._renderer(item);
+    const node = this._renderer(item);
 
-  if (node) {
-    this._container.append(node);
+    if (node) {
+      this._container.append(node);
+    }
   }
-}
-_normalizeItems(items) {
-  if (!items) return [];
+  _normalizeItems(items) {
+    if (!items) return [];
 
-  if (Array.isArray(items)) {
-    return items;
+    if (Array.isArray(items)) {
+      return items;
+    }
+
+    if (typeof items === 'object') {
+      return Object.values(items);
+    }
+
+    return [];
   }
-
-  if (typeof items === 'object') {
-    return Object.values(items);
-  }
-
-  return [];
-}
-  addItem(element){
+  addItem(element) {
     this._container.append(element)
   }
   clear() {
@@ -34,21 +34,20 @@ _normalizeItems(items) {
   setRenderer(renderer) {
     this._renderer = renderer;
   }
+  
   renderItems(items) {
-  this.clear();
+    this.clear();
 
-  const normalizedItems = this._normalizeItems(items);
+    this._items = items;
 
-  normalizedItems.forEach(item => {
-    this._renderItem(item);
-  });
-}renderItems(items) {
-  this.clear();
+    const normalizedItems = this._normalizeItems(items);
 
-  const normalizedItems = this._normalizeItems(items);
 
-  normalizedItems.forEach(item => {
-    this._renderItem(item);
-  });
-}
+
+    normalizedItems.forEach(item => {
+
+      this._renderItem(item);
+    });
+  }
+
 }
