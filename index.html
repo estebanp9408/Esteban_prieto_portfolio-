@@ -73,25 +73,28 @@
            </a>
 
           </template>
-          <template class="about-me__template">
-  <div class="about-me">
-    <h2 class="about-me__title"></h2>
-    <p class="about-me__description"></p>
-    <ul class="about-me__skills"></ul>
-    <ul class="about-me__languages"></ul>
-  </div>
-          </template>
-<template class="about-me__skill-template">
-  <li class="about-me__skill"></li>
-</template>
+       <template id="about-me__template">
+          <div class="about-me__container">
 
-<template class="about-me__language-template">
-  <li class="about-me__language">
-    <span class="about-me__language-name"></span>
-    <span class="about-me__language-level"></span>
-  </li>
-</template>
-          <template id="projects-card-template">
+            <h2 class="about-me__title"></h2>
+
+            <p class="about-me__description"></p>
+
+            <!-- SKILLS -->
+            <div class="about-me__skills">
+              <h3>Skills</h3>
+              <ul class="about-me__skills-list"></ul>
+            </div>
+
+            <!-- LANGUAGES -->
+            <div class="about-me__languages">
+              <h3>Languages</h3>
+              <ul class="about-me__languages-list"></ul>
+            </div>
+
+          </section>
+        </template>
+          <template id="projects__card-template">
             <div class="projects-card__card">
               <img class="projects-card__card-photo" src="" alt="" />
               <div class="projects-card__card-content">

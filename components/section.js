@@ -3,13 +3,27 @@ export default class Section {
     this._renderer = renderer
     this._container = containerElement
   }
-  renderItems(items){
-    items.forEach((item) => {
-     const card =this._renderer(item);
-     this.addItem(card);
-    });
 
+  _renderItem(item) {
+  const node = this._renderer(item);
+
+  if (node) {
+    this._container.append(node);
   }
+}
+_normalizeItems(items) {
+  if (!items) return [];
+
+  if (Array.isArray(items)) {
+    return items;
+  }
+
+  if (typeof items === 'object') {
+    return Object.values(items);
+  }
+
+  return [];
+}
   addItem(element){
     this._container.append(element)
   }
@@ -20,4 +34,21 @@ export default class Section {
   setRenderer(renderer) {
     this._renderer = renderer;
   }
+  renderItems(items) {
+  this.clear();
+
+  const normalizedItems = this._normalizeItems(items);
+
+  normalizedItems.forEach(item => {
+    this._renderItem(item);
+  });
+}renderItems(items) {
+  this.clear();
+
+  const normalizedItems = this._normalizeItems(items);
+
+  normalizedItems.forEach(item => {
+    this._renderItem(item);
+  });
+}
 }

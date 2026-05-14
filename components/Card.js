@@ -8,6 +8,7 @@ export default class Card {
     this._handleCardClick = handlerImageClick;
   }
   _getTemplate() {
+    console.log( (this._templateSelector));
     const cardElement = document
       .querySelector(this._templateSelector)
       .content.querySelector(".projects-card__card")
