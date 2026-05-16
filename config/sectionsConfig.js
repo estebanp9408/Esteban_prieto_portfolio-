@@ -8,11 +8,13 @@ import  ContactCard  from '../components/ContactCard.js';
 export const sectionsConfig = {
 
   about: {
+
     title: 'Sobre mí',
     className: 'section-about',
     data: aboutData,
     CardClass: AboutMe,
     templateSelector: "#about-me__template",
+
   },
 
   projects: {
@@ -23,7 +25,8 @@ export const sectionsConfig = {
     templateSelector: "#projects__card-template",
     handlerImageClick: (data) => {
       popupImage.open(data);
-    }
+    },
+    gridClass: "projects__container"
   },
 
   contact: {
@@ -31,7 +34,8 @@ export const sectionsConfig = {
     className: 'section-contact',
     data: contactData,
     CardClass: ContactCard,
-    templateSelector: ".contact__card-template"
+    templateSelector: ".contact__card-template",
+    gridClass: "contact__container"
   }
 
 };

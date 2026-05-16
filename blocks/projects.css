@@ -1,4 +1,4 @@
-.section__container {
+.projects__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: 17px;

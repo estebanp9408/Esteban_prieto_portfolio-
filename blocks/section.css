@@ -13,6 +13,7 @@
 .active {
     display: block;
 }
+
 .back-button{
     position: absolute;
     bottom: -155px;

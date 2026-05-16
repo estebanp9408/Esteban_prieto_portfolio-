@@ -35,7 +35,7 @@ const section = document.querySelector('.section');
 const sectionTitleTemplate = document.querySelector('#section-title-template');
 const sectionInstance = new Section({
 
-  
+
   renderer: (item) => item
 }, sectionContainer);
 
@@ -52,7 +52,7 @@ mainNavLinks.forEach(link => {
     sectionWrapper.className = 'dynamic-section';
     sectionWrapper.classList.add(`section-${sectionType}`);
     const renderer = (item) => {
-      
+
       console.log("🚀 ~ index.js:38 ~ sectionInstance:", sectionInstance)
       //""
       //""
@@ -70,6 +70,12 @@ mainNavLinks.forEach(link => {
     sectionInstance.setRenderer(renderer);
     sectionInstance.clear();
     sectionInstance.renderItems(config.data);
+
+    // quitar clase anterior si existe
+    sectionContainer.classList.remove('projects__container', 'contact__container',);
+
+    // agregar clase de la sección actual
+    sectionContainer.classList.add(config.gridClass);
 
     const existingBackButton = sectionWrapper.querySelector('.back-button');
     if (existingBackButton) {
