@@ -1,18 +1,22 @@
 .contact__container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 17px;
+  grid-template-columns: 1fr;
+  row-gap: 12px;
   column-gap: 10px;
+  width: 100%;
 }
+
 .section-contact {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .contact-card-link {
   text-decoration: none;
   color: inherit;
+  width: 100%;
 }
 
 .contact-card {
@@ -21,12 +25,20 @@
   padding: 12px;
   background-color: #333;
   border-radius: 8px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.contact-card:hover {
+  background-color: #444;
+  transform: translateX(4px);
 }
 
 .image-container {
   width: 40px;
-  height: 40px
+  height: 40px;
+  flex-shrink: 0;
 }
 
 .contact-card-icon {
@@ -39,15 +51,87 @@
   margin-left: 12px;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .contact-card-label {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: #fff;
+  margin: 0;
 }
 
 .contact-card-value {
-  font-size: 12px;
+  font-size: 11px;
   color: #aaa;
+  margin: 2px 0 0 0;
+  word-break: break-all;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 480px) {
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 14px;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .image-container {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contact-card-content {
+    margin-left: 0;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .contact-card-label {
+    font-size: 13px;
+  }
+
+  .contact-card-value {
+    font-size: 12px;
+  }
+}
+
+/* Desktop: 2 columns (original) */
+@media (min-width: 1024px) {
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 17px;
+    column-gap: 10px;
+  }
+
+  .contact-card {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .contact-card-content {
+    margin-left: 12px;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .image-container {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-card-label {
+    font-size: 14px;
+  }
+
+  .contact-card-value {
+    font-size: 12px;
+  }
 }

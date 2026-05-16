@@ -1,12 +1,12 @@
-.main{
+.main {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 880px;
     width: 100%;
-    margin: 0 auto;
+    padding: 16px;
+    box-sizing: border-box;
     background: linear-gradient(
       45deg,
      #1a1a1a,
@@ -14,4 +14,28 @@
       #3d3d3d,
       #5a5a5a
     );
+}
+
+@media (min-width: 480px) {
+    .main {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding: 24px;
+        max-width: var(--max-width-container);
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main {
+        max-width: var(--max-width-container);
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
 }

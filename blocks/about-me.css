@@ -1,3 +1,77 @@
-.section-about{
-  display: grid;
+.section-about {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.about-me__container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-me__title {
+  margin: 0 0 8px 0;
+  font-size: clamp(18px, 5vw, 28px);
+  font-weight: 600;
+  color: #fff;
+}
+
+.about-me__description {
+  margin: 0;
+  font-size: clamp(13px, 2vw, 15px);
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.about-me__skills,
+.about-me__languages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-me__skills h3,
+.about-me__languages h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.about-me__skills-list,
+.about-me__languages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-me__skills-list li,
+.about-me__languages-list li {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .about-me__container {
+    gap: 20px;
+  }
+
+  .about-me__skills-list,
+  .about-me__languages-list {
+    gap: 10px;
+  }
+
+  .about-me__skills-list li,
+  .about-me__languages-list li {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
 }

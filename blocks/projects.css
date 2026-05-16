@@ -1,37 +1,103 @@
 .projects__container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 17px;
+  grid-template-columns: 1fr;
+  row-gap: 12px;
   column-gap: 10px;
+  width: 100%;
 }
+
 .projects-card__card {
   position: relative;
-  max-width: 282px;
   width: 100%;
   background-color: #fff;
   border-radius: 11px;
-}
-.projects-card__card-photo {
-  height: 282px;
-  width: 100%;
   overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.projects-card__card:hover {
+  opacity: 0.85;
+  transform: translateY(-4px);
+}
+
+.projects-card__card-photo {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  object-fit: cover;
 }
+
 .projects-card__card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 12px;
 }
+
 .projects-card__card-title {
-   white-space: pre-line;
-   margin-bottom: 8px;
-   text-align: center;
+  white-space: pre-line;
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
 }
+
 .projects-card__card-subtitle {
-  margin-top: 0px;
- white-space: pre-line;
- text-align: center;
+  margin: 0;
+  white-space: pre-line;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Tablet small: 2 columns */
+@media (min-width: 480px) {
+  .projects__container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 14px;
+  }
+
+  .projects-card__card-photo {
+    height: 180px;
+  }
+}
+
+/* Tablet large: 2-3 columns */
+@media (min-width: 768px) {
+  .projects__container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 16px;
+    column-gap: 12px;
+  }
+
+  .projects-card__card-photo {
+    height: 240px;
+  }
+
+  .projects-card__card-title {
+    font-size: 15px;
+  }
+}
+
+/* Desktop: 3 columns (original) */
+@media (min-width: 1024px) {
+  .projects__container {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 17px;
+    column-gap: 10px;
+  }
+
+  .projects-card__card {
+    max-width: 282px;
+  }
+
+  .projects-card__card-photo {
+    height: 282px;
+  }
+
+  .projects-card__card-title {
+    font-size: 16px;
+  }
 }
